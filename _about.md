@@ -1,4 +1,5 @@
 # Course Information
+
 The course gives an introduction to obtaining, transforming, exploring and visualising data using modern tools.
 This is at the core of datascience. We will specifically be using the following tools: [Python]()/[R](), [Jupyter
 notebook](), [Git]() and [Github](). The course will give and introduction to these tools and how they are
@@ -22,12 +23,17 @@ This website is supplemented by a [Moodle page](https://kurser.math.su.se/course
 University(SU) login. However, the content of the course will be fully contained on this page. The Moodle page
 is used for forum discussion and registration.
 
-## Examination
+# Examination
+
 Examination of the course consists of three parts
+
+## Home assignments
+## Project
+## Exam
 - Weekly individual homework assignments with sharp deadlines and peer review,
   see [Homework](/homework/)
 - An individual project, see [Project](/project)
 - A theoretical take home exam, see [Exam](/exam/)
 
-## Contact
+# Contact
 The contact info to the TAs can be found on the Moodle page.
