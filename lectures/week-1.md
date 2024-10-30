@@ -66,6 +66,7 @@ intructions provided! Once you have downloaded and installed Github desktop, ope
 into your Github account. Now you should have git and github desktop installed.
 
 ## Anaconda and Jupyter
+
 Anaconda is one of the most popular platforms for scientific computing. In full, it is a
 bundle of various software used in data science, packaged succinctly. Jupyter 
 is one of theses programs inlcuded and it is a popular choice for data scientist used for 
