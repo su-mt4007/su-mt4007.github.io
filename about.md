@@ -19,7 +19,7 @@ above will be used for this.
 This course is naturally designed for self-study. Each week there will be course
 material that you should read up on. We will not have traditional lectures in
 this course. Rather, we will meet in person once a week, where I will give a
-live demo of the material gone through the week before. In previous itterations of the
+live demo of the material covered the week before. In previous itterations of the
 course, the live demos have been very appreciated. After the live demo I will be
 available until 17.00 for help with assignments or questions. In addition, I
 will be available on Fridays between 13-16 via Zoom for questions.
@@ -46,16 +46,17 @@ Examination of the course consists of three parts [weekly home assignments](#hom
 ## Home assignments
 
 There will be a home assignment every week with deadlines on Wednesday at 12.00.
-Read more on [Homework](/homework/)
+Read more on [Homework](/homework/).
 
 ## Project
 
 There will be an individual project, where you use the tools in this courses to
-analyze a dataset of your own choice. Read more on [project](/project)
+analyse a dataset of your own choice. Read more on [project](/project).
 
 ## Exam
 
-There will be an oral exam in the form of a case.  Read more on [exam](/exam/)
+There will be an oral exam where you will apply methods taught in this course
+to a given problem. Read more on [exam](/exam/).
 
 # Contact
 
