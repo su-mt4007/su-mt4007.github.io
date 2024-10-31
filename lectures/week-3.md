@@ -99,7 +99,7 @@ As you might have noticed already, the data we work with contains missing
 values. So far, we have ignored them for the sake of simplicity. However,
 ignoring missing values without justification is bad practice. One should always
 have a reason for removin data. This requires some thought and analysis, maybe
-even a few rounds of [EDA](/lectures/4) to really understand the data. If you
+even a few rounds of [EDA]() to really understand the data. If you
 have a reasonable guess about the value of the missing data then *imputing* the
 value is a fine. If there is no information to be found, then discarding the
 entry or variable is fine. Either way, making sure that you document what and why is
@@ -112,7 +112,7 @@ will often find these type of values in the data and the reason for the outlier
 can vary. For instance, it can be a data entry error, measurement error,
 sampling error, processing error and there are ofcourse natural outliers. Many
 statistical methods are employed for detecting outliers. We will only employ
-[EDA](/lectures/4) to detect and delete/transform/impute/accept outliers. Once
+[EDA]() to detect and delete/transform/impute/accept outliers. Once
 again, whatever you choose be transparent and document what you have done. 
 
 ## Remarks
