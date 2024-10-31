@@ -18,10 +18,10 @@ above will be used for this.
 
 This course is naturally designed for self-study. Each week there will be course
 material that you should read up on. We will not have traditional lectures in
-this course. Rather, we will meet in person once a week, where I will give a
+this course. Rather, we will meet in person once a week, where we will give a
 live demo of the material covered the week before. In previous itterations of the
-course, the live demos have been very appreciated. After the live demo I will be
-available until 17.00 for help with assignments or questions. In addition, I
+course, the live demos have been very appreciated. After the live demo we will be
+available until 17.00 for help with assignments or questions. In addition, we
 will be available on Fridays between 13-16 via Zoom for questions.
 
 The main literature of the course will be 
@@ -34,6 +34,11 @@ You can buy the books if you want but most of the information can be found on
 the web!
 
 The teacher of the course is [Taariq Nazar](https://www.su.se/english/profiles/tana2011-1.618737).
+
+*On the bottom of each page on this website you will be able to make suggestions
+on the page if you feel like anything is unclear on the specific page or plain
+wrong. It can be anything from spelling mistakes to unclear formulations. We
+recommend that you do this.*
 
 Finally, we should give credit where it is due. **This course is based on ideas
 & material developed by Martin Sköld, Erik Thorsén, Michael Höhle and Felix

@@ -62,7 +62,7 @@ careful when you use these projects and always make sure that you give proper
 credit to the original creator. Being affluent with Github can and will save you
 a lot of time. 
 
-I can go on and on about Git but you wont understand it until you use it! So we
+We can go on and on about Git but you wont understand it until you use it! So we
 will focus on using Git with Github in this course and hopefully you will be
 convinced!
 
