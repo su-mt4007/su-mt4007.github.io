@@ -8,14 +8,13 @@ export default defineConfig({
     math: true,
   },
   themeConfig: {
-   // editLink: {
-   //   pattern:"https://github.com/mt4007-ht23/mt4007-ht23.github.io/issues/new?title=:path",
-   //   text:"Suggest a change or notify an issue on this page"
-   // },
+    editLink: {
+      pattern:"https://github.com/su-mt4007/su-mt4007.github.io/issues/new?title=:path",
+      text:"Suggest a change or notify an issue on this page"
+    },
     search:{
       provider: 'local'
     },
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Lectures', link: '/lectures/' },

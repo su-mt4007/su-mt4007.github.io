@@ -10,8 +10,8 @@ hero:
     - theme: brand
       text: Course Information
       link: /about
-      # - theme: alt
-   #   text: Course Information
-   #   link: /about
+    - theme: alt
+      text: Moodle Page
+      link: https://kurser.math.su.se/course/view.php?id=1446
 ---
 
