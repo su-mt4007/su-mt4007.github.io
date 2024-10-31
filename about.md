@@ -45,8 +45,8 @@ Examination of the course consists of three parts [weekly home assignments](#hom
 
 ## Home assignments
 
-There will be a home assignment every week with deadlines on Wednesday at 12.00.
-Read more on [Homework](/homework/).
+There will be a home assignment every week with strict deadlines. Read more on
+[Homework](/homework/).
 
 ## Project
 
@@ -55,7 +55,7 @@ analyse a dataset of your own choice. Read more on [project](/project).
 
 ## Exam
 
-There will be an oral exam where you will apply methods taught in this course
+The last part of this course is an oral exam where you will apply methods taught in this course
 to a given problem. Read more on [exam](/exam/).
 
 # Contact
