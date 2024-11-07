@@ -1,13 +1,34 @@
 # DataFrames & Visualising data with plots
 
+#### Reading
+- [P4DA](https://wesmckinney.com/book/): chapter 5.2, parts of 7.2, 9
+- [R4DS](https://r4ds.had.co.nz/index.html): chapter 3,5.1-5.5
+
+### Resources
+
+- [Importance of
+  visualisation](https://hdsr.mitpress.mit.edu/pub/zok97i7p/release/4)
+
 ## Oveview
+
+In this week we will learn how to work with dataframes and how to visualise
+data. To work with data we need to be able to manipulate it and shape into
+something we want. This is where dataframes come in. Dataframes are a way to store
+and manipulate data in a tabular format. Below you will find a brief description
+of what they are and some basic operations you can perform on them.
+
+Once the data is in the format we want, we can start exploring it. To do this we
+can use plots, they are a powerful tool to make observations and draw
+conclusions. We will also look into the differences between plots and how to
+choose a suitable visualisation method for a specific problem. 
+
+The best way to learn is by doing! To get aquainted with the material, I suggest
+that you work through the reading material and try to implement the examples in
+and if time permits try and find data on your own to work with.
 
 
 ## DataFrames
 
-#### Reading
-- [P4DA](https://wesmckinney.com/book/): chapter 5.2, parts of 7.2
-- [R4DS](https://r4ds.had.co.nz/index.html): chapter 5.1-5.5
 
 Tables are the go to structure to visualize data. They consist of columns and rows labled in a particular fashion.
 A popular (and good) way of organizing data in tables is using columns e.g. Name, Age, Height, to represent
@@ -29,9 +50,12 @@ special id specific to the data). A core concept of this course is how to work
 with dataframes, that is, how to perform operations on dataframes. 
 
 ### Working with Dataframes
+
 There are a set of operations you should be familiar with to work on
 dataframes. These are `sorting`, `selecting`, `filtering`, `mutating` and `grouping`. Using these, you can 
-create complex operations by composing the operations.
+create complex operations by composing the operations. Below are short
+descriptions of the operations followed by and example of how to perform them in
+Python and R.
 
 #### Sorting
 Sorting is the process of ordering data by a variable or multiple variables. For
@@ -131,49 +155,30 @@ df %>%
 ```
 :::
 
-You can combine these simple operations to compose very complex ones. To find
-the documentation, google "package method doucmentation". E.g.
-"pandas loc documentation", the first link is usually the original
-documentation and will contain indepth information for the
-specific method you are searching for.
+As mentioned above, you can use these simple operations to create very complext
+ones. To find the documentation, google "package method doucmentation". E.g.
+"pandas loc documentation", the first link is usually the original documentation
+and will contain indepth information for the specific method you are searching
+for.
 
-# Lecture 3 (Visualising Data: Plots)
-
-### Reading
-
-- [P4DA](https://wesmckinney.com/book/): chapter 9
-- [R4DS](https://r4ds.had.co.nz/index.html): chapter 3
-
-### Resources
-
-- [Importance of
-  visualisation](https://hdsr.mitpress.mit.edu/pub/zok97i7p/release/4)
-
-
-## Summary 
-
-In this lecture we will learn how to visualise data in terms of plots. We will
-also look into the differences between plots and how to choose a suitable
-visualisation method for a specific problem. Finally, we will conclude with and
-example. This lecture will contain a less content than others.
+# Visualising Data: Plots
 
 ## Visualising Data
 
 A ~~picture~~ *plot* is worth a thousand word, is a popular phrase, that conveys
-the use the power of data visualisation. This is meant to convey the message
-that you can understand more from a single image than a text of words. In our
-case, when we analyse plots generated from the data we will be able to draw
-deeper conclusions than we would have by just looking at the data through
-tables. So far that is what we have been doing. Although tables of data are
-great for, initial interpretation, transformation e.t.c, it lends us no way of
-understanding the data. Visualising data in forms of images(plots), gives us a
-tool to analyse the data and gain a deeper understanding of it, it enables us,
-in most cases, to draw far deeper conclusion of the data than would be possible
-otherwise.
+the power of data visualisation. This is meant to convey the message that you
+can understand more from a single image than a text of words. In our case, when
+we analyse plots generated from the data we will be able to draw deeper
+conclusions than we would have by just looking at the data through tables. So
+far that is what we have been doing. Although tables of data are great for,
+initial interpretation, transformation etc, it lends us no way of understanding
+the data. Visualising data in forms of plots, gives us a tool to analyse the
+data and gain a deeper insights of it, it enables us, in most cases, to
+draw far deeper conclusion of the data than would be possible otherwise.
 
 ### Chosing the right Plot
 
-There are many ways to represent the data, but one has to be mindfull of the
+There are many ways to represent the data, but one has to be mindful of the
 type of plot used. Choosing the right plot is an important problem we will be
 faced with when visualising data. The plot should convey a conclusion that can
 be drawn without ambiguity. That is why it is important to consistently use
@@ -267,6 +272,6 @@ df %>%
 
 This is by no means comprehensive, but is meant to show you how to plot in
 practice. You can find more examples in the provided reading material. We will
-explore how to use plots to draw conclusions in the next plot.
+explore how to use plots to draw conclusions in the comming weeks.
 
 

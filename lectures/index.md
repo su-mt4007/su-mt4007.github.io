@@ -29,7 +29,7 @@ direct access to me during the allotted lecture times. Use it!
 |----------:|:-------------------------------|:---------------------------------------------------------------------:|
 |        1  | Tue, 2024-11-05,  13:00 - 17:00 | [Introduction. Software, Git/GitHub and Markdown](/lectures/week-1) |
 |           | Fri, 2024-11-08,  13:00 - 16:00 | Zoom Q&A                                                            |
-|        2  | Tue, 2024-11-12,  13:00 - 17:00 | [DataFrames & Visualising data with plots]()        |
+|        2  | Tue, 2024-11-12,  13:00 - 17:00 | [DataFrames & Visualising data with plots](/lectures/week-2)        |
 |           | Fri, 2023-11-15,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        3  | Tue, 2023-11-19,  13:00 - 17:00 | [Exploratory Data Analysis and Cleaning date]()     |
 |           | Fri, 2023-11-22,  13:00 - 16:00 | Zoom Q&A                                                            |

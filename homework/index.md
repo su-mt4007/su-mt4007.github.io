@@ -44,7 +44,7 @@ You will give your feedback under the issue that has been raised.
 | Homework                            | Assignment  Deadline | Review Deadling         |
 |:------------------------------------|:-----------|:-----------------| 
 | [HW1: GitHub test-run](/homework/1) | 2024-11-12 23:59 | 2023-11-14 23:59 | 
-| [HW2: Workingwith Tables: Basic Operations]()| 2024-11-19 23:59| 2023-11-23 23:59 | 
+| [HW2: Tables & Plots: Basic](/homework/2)| 2024-11-19 23:59| 2023-11-23 23:59 | 
 | [HW3: Exploring & Visualising Data]()    | 2023-11-26 23:59| 2023-11-28 23:59 | 
 | [HW4: Working with Tables: Data Prepartion]() | 2023-12-03 23:59 | 2023-11-05 23:59 | 
 | [HW5: SQL & RegEx]()             | 2023-12-10 23:59| 2023-12-12 23:59 | 
