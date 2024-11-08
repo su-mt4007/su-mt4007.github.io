@@ -8,6 +8,7 @@ previous itterations of the course, the live demos have been very appreciated.
 In addition, I will be available on **Fridays between 13.00-16.00** via Zoom for
 questions.
 
+<a name="https://stockholmuniversity.zoom.us/j/68515852290">Zoom Link for Q&A</a>
 
 **Bring your laptops**. I will aim to make some parts of the lecture
 interactive, and bringing your laptop and following along will make it easier
