@@ -1,16 +1,29 @@
-# Lecture 4 (Exploratory Data Analysis)
+# Week 3 Exploratory Data Analysis & Processing Data
 
 ### Resources
+
+#### EDA 
 
 - [P4DA](https://wesmckinney.com/book/): chapter 13
 - [R4DS](https://r4ds.had.co.nz/index.html): chapter 7 
 - [Youtube Video ~40 min](https://www.youtube.com/watch?v=xi0vhXFPegw&t=951s)
 
-## Summary
+#### Processing Data
 
-So far in the course, we have gone through the machineary and basic tools to
-transform data and generate graphs. We are now ready dive into the topic of
-Exploratory Data Analyis (EDA).   
+- [P4DA](https://wesmckinney.com/book/): chapter 7.1-7.2
+- [R4DS](https://r4ds.hadley.nz/): chapter 5, chapter 18
+- [Dealing with outliers (motivation)](https://www.analyticsvidhya.com/blog/2021/05/detecting-and-treating-outliers-treating-the-odd-one-out/)
+- [Dealing with missing data](https://www.analyticsvidhya.com/blog/2021/10/handling-missing-value/)
+
+*You can find examples and motivation in the resources.*
+
+### Overview 
+
+On this page we will go through Exploratory Data Analysis (EDA) and procesessing
+data. To do this properly, one has to have a good understanding of the concepts
+thought in the previous weeks.
+
+## Exploratory Data Analysis
 
 EDA is the process of systematically generating an understanding of the data
 using the tools we have studied. That is, transforming and visualising data. We
@@ -41,32 +54,13 @@ of our dataset.
 The process of EDA is iterative. Once a set of questions have been answered, new
 questions will arise. This continues until there are no more questions to ask or
 until you are satisfied with the understanding you have gained. You will get
-better and more efficient at posing questions with practice. So, **practice X
-3**.
+better and more efficient at posing questions with practice. 
 
 Look at the resources above for examples of EDA.
 
-# Lecture 5 (Processing Data)
+## Processing Data
 
-### Resources
-
-- [P4DA](https://wesmckinney.com/book/): chapter 7.1-7.2
-- [R4DS](https://r4ds.hadley.nz/): chapter 5, chapter 18
-- [Dealing with outliers (motivation)](https://www.analyticsvidhya.com/blog/2021/05/detecting-and-treating-outliers-treating-the-odd-one-out/)
-- [Dealing with missing data](https://www.analyticsvidhya.com/blog/2021/10/handling-missing-value/)
-
-*You can find examples and motivation in the resources.*
-
-## Summary
-
-In this lecture we will discuss how to clean and structure datasets. In reality, the raw data
-we are presented with is typically fraught with erros and almost always in a
-form that is very difficult to work with. We would like to process the data in
-a way that removes erros and is easy to work with. We call this *preparing* the
-data. To prepare the data we have to have a few things in mind and the focus of this lecture will be
-on structuring data, dealing missing data and dealing outliers 
-
-## Structuring the Data
+### Structuring the Data
 
 There are many ways of structuring the data, some methods are better than
 others, this becomes more apparent over time when you work with data. The most
@@ -85,7 +79,7 @@ already of this form and that is because it has processed already. An
 added benefit of structuring data in this way is that databases such as SQL,
 store data in this form. 
 
-## Cleaning the data
+### Cleaning the data
 
 Now, that we have structured our data into a form that easy to work with, we
 need to think about cleaning it. In most real world data, there are always some
@@ -93,29 +87,30 @@ observations that have errors. For instance, data is missing or the data dosen't
 make sense for one reason or the other. To finish processing the data we need to
 do a few more things.
 
-### Missing Data
+#### Missing Data
 
 As you might have noticed already, the data we work with contains missing
 values. So far, we have ignored them for the sake of simplicity. However,
 ignoring missing values without justification is bad practice. One should always
-have a reason for removin data. This requires some thought and analysis, maybe
-even a few rounds of [EDA]() to really understand the data. If you
-have a reasonable guess about the value of the missing data then *imputing* the
-value is a fine. If there is no information to be found, then discarding the
-entry or variable is fine. Either way, making sure that you document what and why is
-important.
+have a reason for removing data. This requires some thought and analysis, maybe
+even a few rounds of [EDA](#exploratory-data-analysis) to really understand the
+data. If you have a reasonable guess about the value of the missing data then
+*imputing* the value is a fine. If there is no information to be found, then
+discarding the entry or variable is fine. Either way, making sure that you
+document what and why is important.
 
-### Outliers 
+#### Outliers 
 
 An outliers is an entry that differs from the other entries significantly, you
 will often find these type of values in the data and the reason for the outlier
 can vary. For instance, it can be a data entry error, measurement error,
 sampling error, processing error and there are ofcourse natural outliers. Many
 statistical methods are employed for detecting outliers. We will only employ
-[EDA]() to detect and delete/transform/impute/accept outliers. Once
-again, whatever you choose be transparent and document what you have done. 
+[EDA](#exploratory-data-analysis) to detect and delete/transform/impute/accept
+outliers. Once again, whatever you choose be transparent and document what you
+have done. 
 
-## Remarks
+### Remarks
 
 Real world data is often "ugly" and a great amount of work is needed to make it
 nice and understandable. Try and think about all the things that you have to
