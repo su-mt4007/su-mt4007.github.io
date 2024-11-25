@@ -1,62 +1,74 @@
-# Lecture 6 (Combining Data)
+# Lecture 6 Joining Data, SQL and Introduction to RegEx
 
 ### Resources
 
+#### Joining Data
+
 - [P4DA](https://wesmckinney.com/book/): 8.2-8.3
 - [R4DS](https://r4ds.hadley.nz/): 19.1-19.4
+
+#### SQL
+
+- [W3, SQL Basics](https://www.w3schools.com/sql/sql_syntax.asp)
+- [R4DS](https://r4ds.hadley.nz/) chapter 19
+- SQLite [Python](https://docs.python.org/3/library/sqlite3.html#tutorial), [R](https://solutions.posit.co/connections/db/getting-started/database-queries/)
+
+#### RegEx
+
+- [R4DS](https://r4ds.hadley.nz/strings) chapter 14
+- [P4DA](https://wesmckinney.com/book/data-cleaning.html#text_string_manip) chapter 7.4
+- [RegEx Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 
 *You can find examples and motivation in the resources.*
 
 ## Summary
 
-In this lecture, we are discussing joins. Joining tables allow us to combine
-different sources of data into a single dataframe. As a data scientist, you will
-this happens more often than not. As mentioned previously, data is never nice
-and in the form we want to work with, in most cases it is scattered over
-multiple data sources, for instance, databases, the internet, experimental data
-etc. Joining enables us to combine many datasets into a single one.
+In this lecture, we explore key topics in data manipulation and querying.
+First, we discuss the concept of joins, which allow us to combine different
+sources of data into a single dataframe. This is a crucial skill for data
+scientists, as data is often scattered across multiple sources such as
+databases, the internet, and experimental datasets. Joining enables us to
+consolidate these scattered datasets into one.
+
+Next, we cover the basics of SQL, focusing on the fundamental syntax for making
+queries. This includes both retrieving and storing data in a database, laying
+the foundation for effective database management.
+
+Finally, we delve into the use of RegEx for pattern matching in strings. RegEx
+is a powerful tool for bulk searching patterns and is an industry standard. It
+can be applied across various tools we frequently use, such as Git, Python/R,
+and SQL, making it an essential skill for efficient data processing.
 
 ## Joins
 
-Join is the operation of combining different tables into a single table. There
-are many different types of joins that are relevant an each has the effect of
-mutating the table to increase or decrease the number of variables in the final
-table. The 4 most common merges we will encounter are `left join`, `right join`,
-`inner join` and `outer join` each serving a distinct rule for combining the
-tables. The following image illustrates these operations.
+Joining tables is the process of combining data from multiple tables into a
+single table. This operation is fundamental in data analysis and database
+management, as it allows us to consolidate scattered datasets. There are several
+types of joins, each with unique implications for the structure and size of the
+resulting table. The four most common types are `left join`, `right join`, `inner
+join`, and `outer join`. Each serves a specific purpose, depending on how we want
+to merge the tables.
+
+The following image visually illustrates these operations:
 
 ![join-venn](https://www.alphacodingskills.com/sql/img/sql-join.PNG)
 
 *Image from: https://www.alphacodingskills.com/sql/img/sql-join.PNG*
 
-Here, we are always working refereing to combining *two* tables. In the case
-where there are many more tables to be combined, we can split it up into
-combining two tables at a time. 
+In this context, we are always referring to combining two tables at a time. When
+working with more than two tables, we can achieve the desired result by
+combining them iteratively, two tables at a time.
 
-The most common way to work is to iteratively expand a dataset by combining
-other datasets. That is why, we will work `left join` a lot. Nevertheless,
-combining the other methods enable us to create more complex combinations of
-datasets.
+A common approach is to iteratively expand a dataset by incorporating additional
+datasets through left join, which is widely used due to its practicality.
+However, the other types of joins— `right join`, `inner join`, and `outer join`—are
+equally important for creating more intricate and specific dataset combinations.
 
-Learning how to join tables naturally allows us to work with SQL type databases.
-Joins are essential, when working SQL, since storing data efficently involves
-splitting data up into different tables in a certain way. We will discuss more
-about this in the comming lecture.
-
-# Lecture 7 (Basics of SQL)
-
-### Resources
-- [W3, SQL Basics](https://www.w3schools.com/sql/sql_syntax.asp)
-- [R4DS](https://r4ds.hadley.nz/) chapter 19
-- SQLite [Python](https://docs.python.org/3/library/sqlite3.html#tutorial), [R](https://solutions.posit.co/connections/db/getting-started/database-queries/)
-
-*You can find examples and motivation in the resources.*
-
-## Summary
-
-In this lecture we will go through the basics of SQL. This includes the basic
-syntax for making queries to the database. This includes both retrieving and
-storing data in the database.
+Mastering the art of joining tables is essential for working effectively with
+SQL-based databases. Joins play a critical role in SQL, as efficient data
+storage typically involves splitting data into multiple related tables.
+Understanding how to reassemble this data through joins is a key skill, which we
+will explore further in the upcoming lecture.
 
 ## SQL 
 
@@ -82,9 +94,11 @@ is where the name relational database comes from.
 
 ### Basic Syntax
 
-Writing an SQL *query*(a question or a requests) is similiar to speaking with
+Writing an SQL *query*(a question or a requests) is analagous to speaking to
 the database. Once we get a grasp of the basic syntax we will be able to query
-the database for data in whatever form that is.
+the database and retrieve data.
+
+The syntax will be familiar from the tools we have already learnt.
 
 We use `SELECT` to determine the variables we want and `FROM` to specify the
 table we want it from. Following the image above, we can make the following query.
@@ -127,8 +141,8 @@ LEFT JOIN airlines ON flights.carrier = airlines.carrier;
 Using the syntax described above, we can chain multiple operations to generate
 the desired table. You can see more operations on [W3](https://www.w3schools.com/sql/default.asp).
 
-Since the SQL syntax has been adopted by both `pandas` and `tidyverse`, it will
-not be difficult to learn the content above. 
+Since the SQL syntax has been adopted by both `pandas` and `tidyverse`, the
+content above will not be completely new to learn. 
 
 ### Storing Data
 
@@ -153,7 +167,7 @@ CREATE TABLE table_name (
 );
 ```
 
-Common constrains are `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`. There
+Common constraints are `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`. There
 are more constraints that can be added. They can be found on W3. 
 
 The *unique* identifier (id) of a row should be constrained with `UNIQUE` and it
@@ -161,7 +175,7 @@ must also be filled (`NOT NULL`). The `PRIMARY KEY` incorporates both constraint
 Therefore, it is good practice to specify the row id using the `PRIMARY KEY`
 constraint. 
 
-An example of creating a table can look something like the following quer
+An example of creating a table can look something like the following 
 query.
 
 ```SQL
@@ -233,22 +247,6 @@ Popular libraries are [sqlite3](https://docs.python.org/3/library/sqlite3.html#t
 for Python and [dbplyr](https://dbplyr.tidyverse.org/articles/dbplyr.html) for
 R.** 
 
-# Lecture 8 (RegEx)
-
-### Resources
-- [R4DS](https://r4ds.hadley.nz/strings) chapter 14
-- [P4DA](https://wesmckinney.com/book/data-cleaning.html#text_string_manip) chapter 7.4
-- [RegEx Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-
-*You can find examples and motivation in the resources.*
-
-## Summary
-
-In this lecture, we are going to learn how to use RegEx to pattern match
-strings. We will see how powerful it is to use RegEx to bulk search for
-patterns. It is industry standard and can be used in all of the tools
-we have used so far, i.e Git, Python/R and SQL. 
-
 ## RegEx
 
 Regular Expressions (RegEx) is a powerful tool used in computer science and
@@ -278,20 +276,20 @@ them to a specific format.
 The expression above might look daunting but it will make sense when you get
 thet gist of RegEx. Lets break down this expression. 
 
-- \b: Word boundary to ensure that the match is a whole word and not part of a
+- `\b`: Word boundary to ensure that the match is a whole word and not part of a
   larger sequence. For instance, `\bcat\b` will match the word *cat* but not
   *scattered*. 
-- [\w._%+-]+: Matches the username part of the email address, allowing
+- `[\w._%+-]+`: Matches the username part of the email address, allowing
   alphanumeric characters, dots, underscores, percent signs, plus signs, and
   hyphens. Here `\w` is a **metacharacter** which is short for `A-Za-z0-9`. `+`
   **outside** of the brackets matches 1 or more of the proceeding character.
-- @: Matches the **at** symbol.
-- [\w.-]+: Matches the domain name, allowing alphanumeric characters, dots, and
+- `@`: Matches the **@** symbol.
+- `[\w.-]+`: Matches the domain name, allowing alphanumeric characters, dots, and
   hyphens.
-- \.: Matches the dot before the top-level domain.
-- [A-Z|a-z]{2,4}: Matches the top-level domain (eg. .com) with at least two and
+- `\.`: Matches the dot before the top-level domain.
+- `[A-Z|a-z]{2,4}`: Matches the top-level domain (eg. .com) with at least two and
   at most 4 characters .
-- \b: Word boundary to complete the match.
+- `\b`: Word boundary to complete the match.
 
 To summarise The following image illustrates what we have done.
 
@@ -299,7 +297,8 @@ To summarise The following image illustrates what we have done.
 
 *Image from: https://kottke.org/21/07/a-history-of-regular-expressions-and-artificial-intelligence*
 
-Even if it does not make sense yet that is fine. 
+Even if it does not make sense yet that is fine. You will get the hang of it
+when you start using it. 
 
 ### Basic Syntax
 

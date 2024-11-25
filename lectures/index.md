@@ -32,9 +32,9 @@ direct access to me during the allotted lecture times. Use it!
 |           | Fri, 2024-11-08,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        2  | Tue, 2024-11-12,  13:00 - 17:00 | [DataFrames & Visualising data with plots](/lectures/week-2)        |
 |           | Fri, 2023-11-15,  13:00 - 16:00 | Zoom Q&A                                                            |
-|        3  | Tue, 2023-11-19,  13:00 - 17:00 | [Exploratory Data Analysis and Cleaning date]()     |
+|        3  | Tue, 2023-11-19,  13:00 - 17:00 | [Exploratory Data Analysis and Cleaning data](/lectures/week-3)     |
 |           | Fri, 2023-11-22,  13:00 - 16:00 | Zoom Q&A                                                            |
-|        4  | Tue, 2023-11-26,  13:00 - 17:00 | [SQL and RegEx]()                                   |
+|        4  | Tue, 2023-11-26,  13:00 - 17:00 | [Joining data, SQL and Introduction to RegEx](/lectures/week-4)                                   |
 |           | Fri, 2023-11-29,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        5  | Tue, 2023-12-03,  13:00 - 17:00 | [Retrieving data from the web]()                    |
 |           | Fri, 2023-12-06,  13:00 - 16:00 | Zoom Q&A                                                            |
