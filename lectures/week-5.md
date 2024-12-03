@@ -1,18 +1,24 @@
-# Lecture 9 (REST APIs)
+# Retrieving data from the web
 
 ### Resources
 - [An introduction to APIs](https://zapier.com/resources/guides/apis) chapter 1-3
 - [API requests with Python](https://reqbin.com/code/python/ixa9gi7o/python-http-request-example) 
 - [API requests with R](https://httr2.r-lib.org/)
+- [Web Scraping with R](https://r4ds.hadley.nz/webscraping)
+- [Web Scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
 
 *You can find examples and motivation in the resources.*
 
 ## Summary
 
-In this lecture on REST APIs, we will be diving into the core principles REST as
-a communication framework for applications and we will learn how to practically
-work with REST APIs. The goal is to understand the standardized and efficient method
-for retrieving resources through network communication.
+In this lecture, we will explore the core principles of REST as a communication
+framework for applications and learn practical methods for working with REST
+APIs, focusing on the standardized and efficient retrieval of resources through
+network communication. Additionally, we will study techniques for retrieving
+data from the internet, specifically web scraping. While we have examined how
+REST APIs function and how to retrieve resources through them, we will also
+address scenarios where data is not accessible via an API, necessitating the use
+of web scraping to retrieve data visible on websites.
 
 ## REST APIs
 
@@ -150,7 +156,7 @@ See the following XML representation of an individual.
 Again XML is easy to read and parse. Less common than JSON but still very
 common.
 
-## Example
+### Example
 
 The internet communicates using the REST framework. In this case the request is
 a website and the response html. The browser then parses the html and shows you
@@ -231,23 +237,6 @@ The response body contains the following data:
 It is a simple as that! To get the data into a nice format we need to wrangle
 the raw data. This however we already know how to do.
 
-
-# Lecture 10 (Web Scraping)
-
-### Resources
-
-- [Web Scraping with R](https://r4ds.hadley.nz/webscraping)
-- [Web Scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
-
-*You can find examples and motivation in the resources.*
-
-## Summary
-
-In this lecture, we will continue to study techniques for retrieving data from
-the internet. Specifcally, we will look at web scraping. We have looked at how
-REST APIs work and how we can retrieve resources from them. However, in many
-cases data will not be available through an API and we therefore need to turn to
-web scraping, a method for retrieving data that is visible on a website.
 
 ## Web Scraping
 

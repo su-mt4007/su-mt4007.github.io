@@ -47,5 +47,5 @@ You will give your feedback under the issue that has been raised.
 | [HW2: Tables & Plots: Basic](/homework/2)| 2024-11-19 23:59| 2023-11-23 23:59 | 
 | [HW3: Exploring & Visualising Data](/homework/3)    | 2023-11-26 23:59| 2023-11-28 23:59 | 
 | [HW4: SQL & RegEx](/homework/4) | 2023-12-03 23:59 | 2023-11-05 23:59 | 
-| [HW5: Data from the web]()             | 2023-12-10 23:59| 2023-12-12 23:59 | 
+| [HW5: Data from the web](/homework/5)             | 2023-12-10 23:59| 2023-12-12 23:59 | 
 | [HW6: Functional programming]()       | 2023-12-17 23:59| 2023-12-19 23:59 |

@@ -36,7 +36,7 @@ direct access to me during the allotted lecture times. Use it!
 |           | Fri, 2023-11-22,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        4  | Tue, 2023-11-26,  13:00 - 17:00 | [Joining data, SQL and Introduction to RegEx](/lectures/week-4)                                   |
 |           | Fri, 2023-11-29,  13:00 - 16:00 | Zoom Q&A                                                            |
-|        5  | Tue, 2023-12-03,  13:00 - 17:00 | [Retrieving data from the web]()                    |
+|        5  | Tue, 2023-12-03,  13:00 - 17:00 | [Retrieving data from the web](/lectures/week-5)                    |
 |           | Fri, 2023-12-06,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        6  | Tue, 2023-12-10,  13:00 - 17:00 | [Functional Programming]()                          |
 |           | Fri, 2023-12-13,  13:00 - 16:00 | Zoom Q&A                                                            |
