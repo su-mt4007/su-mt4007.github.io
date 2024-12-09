@@ -1,4 +1,4 @@
-# Lecture 11 (Functional Programming)
+# Functional Programming
 
 ### Resources
 

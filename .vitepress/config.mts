@@ -32,7 +32,7 @@ export default defineConfig({
             { text: 'Week 3', link: '/lectures/week-3' },
             { text: 'Week 4', link: '/lectures/week-4' },
             { text: 'Week 5', link: '/lectures/week-5' },
-//            { text: 'Week 6', link: '/lectures/week-6' },
+            { text: 'Week 6', link: '/lectures/week-6' },
           ]
         }
       ],
@@ -45,7 +45,6 @@ export default defineConfig({
             { text: 'Homework 3', link: '/homework/3' },
             { text: 'Homework 4', link: '/homework/4' },
             { text: 'Homework 5', link: '/homework/5' },
-//            { text: 'Homework 6', link: '/homework/6' },
           ]
         }
       ],
