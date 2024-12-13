@@ -1,7 +1,7 @@
 # Project 
 
 - **Deadline:** January 10th, 2025 at 23:59
-- **Presentation:** TBD
+- **Presentation:** January 17th, 2025, 13.00-18.00
 
 ## Overview
 
