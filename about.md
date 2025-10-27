@@ -1,70 +1,64 @@
 ---
-outline: [1,2]
+outline: [2]
 ---
+
 # Course Information
 
-The course gives an introduction to obtaining, transforming, exploring and
-visualising data using modern tools which is at the core of datascience.
+## What this course is about
 
-We will specifically be using the following tools: `Python`/`R` for programming,
-`Jupyter notebook` for analysing data, `Git` together with `Github` for version
-controll. This course will give and introduction to these tools and how they are
-used in Data Science.
+Data science is mostly about getting, cleaning, exploring, and **explaining** data—clearly and reproducibly. In this course you’ll learn to do exactly that with modern tools. We’ll write code, make plots, and (most importantly) make our work repeatable so that someone else—and future‑you—can run it and get the same results.
 
-An important aspect of data science and science in general is
-[reproducibility](https://en.wikipedia.org/wiki/Reproducibility). There will be
-a great emphasis on creating reproducable code and reports. The tools mentioned
-above will be used for this. 
+You can use **Python or R** throughout the course. Pick the one you’re most comfortable with (or want to learn); the ideas are the same.
 
-This course is naturally designed for self-study. Each week there will be course
-material that you should read up on. We will not have traditional lectures in
-this course. Rather, we will meet in person once a week, where we will give a
-live demo of the material covered the week before. In previous itterations of the
-course, the live demos have been very appreciated. After the live demo we will be
-available until 17.00 for help with assignments or questions. In addition, we
-will be available on Fridays between 13-16 via Zoom for questions.
+## How the course runs
 
-The main literature of the course will be 
-- [R for Data
-Science](https://r4ds.had.co.nz/introduction.html) by Grolemund and Wickham which is specific to R.
-- [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney which is for Python. 
+This is a self‑study‑first course. Each week you read/watch the materials, try
+things, and work on a small assignment. Instead of traditional lectures, we meet
+once a week for a **live demo** of last week’s material—think short walk‑through
++ tips + Q&A—followed by **drop‑in help** time. We also host **Thursday Zoom**
+hours for questions.
 
-Both have an open access version, which are accessed through the links above.
-You can buy the books if you want but most of the information can be found on
-the web!
+* Exact days/times/links are on the relevant pages:
+  **[Lectures](/lectures/)** • **[Homework](/homework/)** • **[Project](/project/)** • **[Exam](/exam/)**
 
-The teacher of the course is [Taariq Nazar](https://www.su.se/english/profiles/tana2011-1.618737).
+## What you’ll be able to do
 
-*On the bottom of each page on this website you will be able to make suggestions
-on the page if you feel like anything is unclear on the specific page or plain
-wrong. It can be anything from spelling mistakes to unclear formulations. We
-recommend that you do this.*
+By the end, you will be able to:
 
-Finally, we should give credit where it is due. **This course is based on ideas
-& material developed by Martin Sköld, Erik Thorsén, Michael Höhle and Felix
-Günther**.
+* Use **Git/GitHub** for version control, collaborate with others, and review code.
+* Build **reproducible** analyses in Python or R (clear README, tidy notebooks/scripts, and a workflow others can run).
+* **Retrieve**, **transform**, **explore**, and **visualize** data with confidence.
+* Communicate results in a way that’s honest, clear, and useful.
 
-# Examination
+## How you’re assessed (short version)
 
-Examination of the course consists of three parts [weekly home assignments](#home-assignments), a [project](#project) and an [exam](#exam).
+You’ll practice every week, do an **individual project**, and finish with an **exam**.
 
-## Home assignments
+* **Home assignments:** weekly, **Pass/Fail**. Focus on the data‑analysis pipeline: load → transform → explore → visualize → report. Expect roughly **half‑time study** each week. Details: **[Homework](/homework/)**.
+* **Project:** **70%** of the final grade (A–F). Pick a public/open dataset and tell a clear, reproducible data story. Details, milestones, and rubric: **[Project](/project/)**.
+* **Exam:** **30%** of the final grade (A–F). You’ll apply course methods to a given problem. Format and scheduling: **[Exam](/exam/)**.
 
-There will be a home assignment every week with strict deadlines. Read more on
-[Homework](/homework/).
+Passing rules, exact deadlines, late/resubmission policies, and feedback timelines live on the relevant pages (and are listed on the relevant pages and on **Moodle**).
 
-## Project
+## Getting help
 
-There will be an individual project, where you use the tools in this courses to
-analyse a dataset of your own choice. Read more on [project](/project).
+* **Live demo + drop‑in + Zoom:** weekly—see **[Lectures](/lectures/)** for times and rooms.
+* **TAs & contacts:** see **Moodle** for the current TA list and how to reach us.
 
-## Exam
+## A note on collaboration & AI tools
 
-The last part of this course is an oral exam where you will apply methods taught in this course
-to a given problem. Read more on [exam](/exam/).
+We encourage discussion and learning together, but there are clear rules about
+what must be your own work. 
 
-# Contact
+Any AI assistance (e.g., ChatGPT/Copilot) must be cited clearly. Flagrant
+copy/paste or uncredited AI will be considered plagiarism. 
 
-The contact info to the TAs can be found on the [Moodle
-page](https://kurser.math.su.se/course/view.php?id=1446).
+## Instructor
+
+**Taariq Nazar** — [profile](https://www.su.se/english/profiles/tana2011-1.618737)
+For TA contact info, see [**Moodle**](https://kurser.math.su.se/course/view.php?id=1631) page. 
+
+## Acknowledgements
+
+This course builds on ideas and materials by **Martin Sköld, Erik Thorsén, Michael Höhle, and Felix Günther**. Thank you!
 

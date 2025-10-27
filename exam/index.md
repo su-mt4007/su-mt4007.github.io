@@ -1,44 +1,49 @@
 # Exam
 
-- **Date & Time:** 13th-16th January 
-- **Graded A-F**
-- No Ladok Registration!
+- **Date & time:** **Monday, 12 January 2026, 08:00–11:00 (Europe/Stockholm)**
+- **Format:** **Written in-place** — mix of **multiple-choice** and **short essay** questions
+- **Grading:** **A–F** (see scale below)
+- **Registration:** **Make sure to register for the exam on Ladok.**
+- **Location:** **TBA** (rooms will be posted soon)
 
-The link to register for a slot to the oral exam is available on the course
-forums.
+> Any last-minute updates (rooms, seating lists, reminders) will be on **Moodle**.
 
-## Overview
+## What the exam checks
 
-The oral exam is a **10-minute individual assessment** designed to evaluate your
-ability to apply the tools and techniques taught in the course. You will be
-asked to answer questions and solve a task or case that reflects the core
-concepts and problem-solving approaches covered throughout the course.  
+You’ll be examined on **all of the concepts taught in the course** and your
+ability to apply them in context. Questions span the full workflow—from
+reproducible practice and version control to working with data, databases, APIs,
+and simple text and functional programming tools.
 
-This is an opportunity to demonstrate both your **understanding of standard
-tasks** and your ability to approach unfamiliar problems using the course
-methodologies. You are expected to clearly explain your reasoning and showcase
-your problem-solving process during the exam.  
+**Question types:** a mix of **multiple-choice** and **short essay** prompts focused on understanding and clear reasoning.
 
+## Question types
 
-## Preparation  
-- Ensure you are **familiar with the tools and techniques** covered in the course homework.  
-- Review how these tools are applied to solve tasks and handle new problems.  
+* **Multiple-choice** on core concepts (reproducibility, Git/GitHub, data wrangling & visualization).
+* **Short essay** prompts where you explain steps, justify choices, or interpret results.
 
-## Exam Procedure  
-- The oral exam will last approximately **10 minutes**.  
-- You will be asked **questions** and required to solve a task or case related to course content.  
-- The focus is on assessing your ability to:  
-  - **Solve standard tasks** in the course.  
-  - **Approach unfamiliar problems** using tools and techniques taught in the course.  
+## Allowed materials
 
-## Evaluation  
-- You will be graded based on:  
-  - Your **familiarity with solving tasks**.  
-  - Your ability to **find solutions to unfamiliar problems**, including clear reasoning and application of course tools.  
+Details will be announced on **Moodle**. (Assume standard written-exam rules unless specified.)
 
-## Expectations During the Exam  
-- Clearly explain your **thought process** and how you plan to solve the task.  
-- You may use **any tool** you like, such as Google or ChatGPT, but it’s essential to demonstrate proficiency with the **course-specific tools**.  
+## Grading & scale
 
+* **Total points:** 100
+* **Passing:** **E or better (≥ 50 points)**
+* **Scale:**
 
+  * **A:** 90–100
+  * **B:** 80–89
+  * **C:** 70–79
+  * **D:** 60–69
+  * **E:** 50–59
+  * **F:** 0–49
+
+Partial credit is awarded on short-essay questions for clear reasoning.
+
+## Logistics
+
+* Please arrive by **07:45** with a **photo ID** and any **allowed materials** (see Moodle).
+* If you need accommodations, contact the course team ahead of time.
+* Make-up/retake information will be provided on a later date.
 
