@@ -1,119 +1,211 @@
-# Week 3 Exploratory Data Analysis & Processing Data
+# Exploratory Data Analysis (EDA) & Processing Data
 
 ### Resources
 
 #### EDA 
-
-- [P4DA](https://wesmckinney.com/book/): chapter 13
-- [R4DS](https://r4ds.had.co.nz/index.html): chapter 7 
-- [Youtube Video ~40 min](https://www.youtube.com/watch?v=xi0vhXFPegw&t=951s)
+- [P4DA](https://wesmckinney.com/book/): Chapter 13
+- [R4DS](https://r4ds.had.co.nz/index.html): Chapter 7 
+- [YouTube ~40 min](https://www.youtube.com/watch?v=xi0vhXFPegw&t=951s)
 
 #### Processing Data
-
-- [P4DA](https://wesmckinney.com/book/): chapter 7.1-7.2
-- [R4DS](https://r4ds.hadley.nz/): chapter 5, chapter 18
+- [P4DA](https://wesmckinney.com/book/): Chapters 7.1–7.2
+- [R4DS](https://r4ds.hadley.nz/): Chapters 5, 18
 - [Dealing with outliers (motivation)](https://www.analyticsvidhya.com/blog/2021/05/detecting-and-treating-outliers-treating-the-odd-one-out/)
 - [Dealing with missing data](https://www.analyticsvidhya.com/blog/2021/10/handling-missing-value/)
 
-*You can find examples and motivation in the resources.*
+> Use the readings for depth; this page is a hands‑on guide you can follow directly.
 
-### Overview 
 
-On this page we will go through Exploratory Data Analysis (EDA) and procesessing
-data. To do this properly, one has to have a good understanding of the concepts
-thought in the previous weeks.
+## Overview 
 
-## Exploratory Data Analysis
+This week is about two complementary skills:
+1) **Exploratory Data Analysis (EDA):** asking systematic questions and using transformations/visualisations to answer them.  
+2) **Processing data:** structuring, cleaning, and documenting decisions so later analysis is trustworthy.
 
-EDA is the process of systematically generating an understanding of the data
-using the tools we have studied. That is, transforming and visualising data. We
-have already, unknowingly, performed EDA, for instance, when we use the function
-`head`, it gives us a quick glance of the structure of the data. By using
-`head`, we have answered the question: *what is the structure of the data?*
+Both build on Weeks 1–2 (data frames, plotting).
 
-Asking questions is key to EDA. That is how we unwrap the complexity of the
-data, by asking and answering questions.
 
-> There are no routine statistical questions, only questionable statistical
-> routines.” 
->
-> — Sir David Cox
+## Exploratory Data Analysis (EDA)
 
-*(quote borrowed from [R4DS](https://r4ds.had.co.nz/index.html)*
+EDA means **building understanding** by iteratively asking questions and checking the data with tables/plots. Even simple commands like `head()` answer the question “what’s the structure?” Good EDA always makes the questions explicit.
 
-All questions of the data will lead to some deeper understanding of the data.
-What are questions that we can ask (and answer) to fill out the gaps of
-knowledge we have about the data? That ofcourse, depends on the data we are
-working with. Therefore, performing EDA is not a strict framework, rather a
-research methodology based on curiosity. E.g, *can one of the variables explain
-the other? Why or why not?*. Answering these type of questions will give us a
-deep insight into the data. We will not be able to answer all questions but
-knowing what type of questions those are, will give us insight into the limits
-of our dataset.
+> “There are no routine statistical questions, only questionable statistical routines.” — Sir David Cox  
+> *(quoted in* R4DS*)*
 
-The process of EDA is iterative. Once a set of questions have been answered, new
-questions will arise. This continues until there are no more questions to ask or
-until you are satisfied with the understanding you have gained. You will get
-better and more efficient at posing questions with practice. 
+### A practical EDA loop
 
-Look at the resources above for examples of EDA.
+1. **Pose a question.** (e.g., “Are older customers buying more?”)  
+2. **Transform/select/filter** the relevant variables.  
+3. **Visualise** (and/or summarise).  
+4. **Interpret**: what changed in your understanding?  
+5. **Decide next question** based on what you learned.
+
+Repeat until you either answer the real question or hit the limits of the data.
+
+### Question prompts
+
+- **Structure**: Which variables are numeric/categorical/time? Any obvious typos or coding issues?  
+- **Univariate**: What’s the distribution? Outliers? Heaviness of tails? Missingness pattern?  
+- **Bivariate**: How do X and Y relate? Conditional on groups? Nonlinear patterns?  
+- **Temporal**: Seasonality, trend, regime shifts, missing dates?  
+- **Data quality**: Duplicates, inconsistent units, impossible values?
+
+> Tip: Keep notes inline (Markdown near the code) so decisions are reviewable.
+
 
 ## Processing Data
 
-### Structuring the Data
+Processing makes the dataset **tidy, consistent, and analyzable**. Do it early; it saves hours later.
 
-There are many ways of structuring the data, some methods are better than
-others, this becomes more apparent over time when you work with data. The most
-popular format follow these 3 rules:
+### Structuring the data (tidy format)
 
-- Each variable is a column; each column is a variable.
-- Each observation is a row; each row is an observation.
-- Each value is a cell; each cell is a single value.
+Use the “tidy” rules:
+- Each **variable** is a column.  
+- Each **observation** is a row.  
+- Each **value** is a single cell.
 
-Unfortunately, most of the data that you will find is not of this form. To
-comply with these rules we will have to wrangle the data in some fashion.
-Mostly, by pivoting. Data that are complient with the rules above are often
-easier to work with. Furthermore, most libraries work much easier with this
-format. As you might have realised, the data that has been used so far is
-already of this form and that is because it has processed already. An
-added benefit of structuring data in this way is that databases such as SQL,
-store data in this form. 
+Real data rarely arrives tidy. Two common fixes are **pivoting** and **joining**.
+
+#### Pivoting (long ↔ wide)
+
+:::code-group
+```Python
+import pandas as pd
+
+# Wide → long (like tidyr::pivot_longer)
+# Example: columns 'Gold','Silver','Bronze' into rows
+df_long = df.melt(id_vars=["Country"], value_vars=["Gold","Silver","Bronze"],
+                  var_name="Medal", value_name="Count")
+
+# Long → wide (like tidyr::pivot_wider)
+df_wide = df_long.pivot_table(index=["Country"], columns="Medal",
+                              values="Count", aggfunc="sum").reset_index()
+```
+
+```R
+library(dplyr)
+library(tidyr)
+
+# Wide → long
+df_long <- df %>%
+  pivot_longer(cols = c(Gold, Silver, Bronze),
+               names_to = "Medal", values_to = "Count")
+
+# Long → wide
+df_wide <- df_long %>%
+  pivot_wider(names_from = Medal, values_from = Count, values_fn = sum)
+```
+:::
+
+#### Joining (combining tables)
+
+:::code-group
+```Python
+# Keys must be clean and unique (or you get row multiplication)
+merged = left_df.merge(right_df, on="id", how="left")   # inner/left/right/outer
+```
+
+```R
+library(dplyr)
+merged <- left_df %>% left_join(right_df, by = "id")    # inner_join / full_join / right_join
+```
+:::
 
 ### Cleaning the data
 
-Now, that we have structured our data into a form that easy to work with, we
-need to think about cleaning it. In most real world data, there are always some
-observations that have errors. For instance, data is missing or the data dosen't
-make sense for one reason or the other. To finish processing the data we need to
-do a few more things.
+Typical steps: standardise text/units, parse dates, handle **missing data**, and deal with **outliers**. Always **document** what you did and why.
 
-#### Missing Data
+#### Missing data
 
-As you might have noticed already, the data we work with contains missing
-values. So far, we have ignored them for the sake of simplicity. However,
-ignoring missing values without justification is bad practice. One should always
-have a reason for removing data. This requires some thought and analysis, maybe
-even a few rounds of [EDA](#exploratory-data-analysis) to really understand the
-data. If you have a reasonable guess about the value of the missing data then
-*imputing* the value is a fine. If there is no information to be found, then
-discarding the entry or variable is fine. Either way, making sure that you
-document what and why is important.
+Common strategies:
+- **Leave as missing** and use methods robust to NA.  
+- **Drop rows/columns** (only with justification).  
+- **Impute** using simple rules (mean/median/mode), grouped summaries, or model‑based methods.
 
-#### Outliers 
+:::code-group
+```Python
+import pandas as pd
+import numpy as np
 
-An outliers is an entry that differs from the other entries significantly, you
-will often find these type of values in the data and the reason for the outlier
-can vary. For instance, it can be a data entry error, measurement error,
-sampling error, processing error and there are ofcourse natural outliers. Many
-statistical methods are employed for detecting outliers. We will only employ
-[EDA](#exploratory-data-analysis) to detect and delete/transform/impute/accept
-outliers. Once again, whatever you choose be transparent and document what you
-have done. 
+# Inspect
+df.isna().sum()             # count missing per column
+df["col"].isna().mean()     # fraction missing
 
-### Remarks
+# Simple imputations
+df["x"] = df["x"].fillna(df["x"].median())              # numeric
+df["cat"] = df["cat"].fillna("Unknown")                 # categorical
 
-Real world data is often "ugly" and a great amount of work is needed to make it
-nice and understandable. Try and think about all the things that you have to
-account for when you are working with raw data. For instance, duplicate
-observations and so on. Use your best judgement. 
+# Grouped imputation (e.g., fill x with group median by Country)
+df["x"] = df.groupby("Country")["x"].transform(lambda s: s.fillna(s.median()))
 
+# Drop rows with any NA in selected columns
+df_clean = df.dropna(subset=["x", "y"])
+```
+
+```R
+library(dplyr)
+library(tidyr)
+
+# Inspect
+summarise_all(df, ~ sum(is.na(.)))    # counts per column
+
+# Simple imputations
+df <- df %>% mutate(
+  x = if_else(is.na(x), median(x, na.rm = TRUE), x),
+  cat = replace_na(cat, "Unknown")
+)
+
+# Grouped imputation
+df <- df %>% group_by(Country) %>%
+  mutate(x = if_else(is.na(x), median(x, na.rm = TRUE), x)) %>%
+  ungroup()
+
+# Drop rows with NA in selected columns
+df_clean <- df %>% drop_na(x, y)
+```
+:::
+
+> Rule of thumb: Impute only when you believe the imputed value is *plausible* given available information. Otherwise, prefer explicit missingness.
+
+#### Outliers
+
+An **outlier** differs markedly from the bulk of the data. Causes include entry errors, unit mix‑ups, rare but real events, or sampling artifacts. Detect with EDA; then decide to **keep**, **winsorise**, **transform**, or **exclude**—and record the rationale.
+
+A simple IQR (interquartile range) rule for flagging:
+
+:::code-group
+```Python
+import numpy as np
+
+q1, q3 = df["x"].quantile([0.25, 0.75])
+iqr = q3 - q1
+lo, hi = q1 - 1.5*iqr, q3 + 1.5*iqr
+outlier_mask = (df["x"] < lo) | (df["x"] > hi)
+df["is_outlier_x"] = outlier_mask
+```
+
+```R
+q1 <- quantile(df$x, 0.25, na.rm = TRUE)
+q3 <- quantile(df$x, 0.75, na.rm = TRUE)
+iqr <- q3 - q1
+lo <- q1 - 1.5 * iqr
+hi <- q3 + 1.5 * iqr
+df <- df %>% mutate(is_outlier_x = x < lo | x > hi)
+```
+:::
+
+> Prefer **plots** (histograms, boxplots, scatter) over rules alone—context matters.
+
+## Common pitfalls (and fixes)
+
+- **Silent data loss during joins/pivots.** Check row counts before/after; verify keys are unique.  
+- **Implicit type coercion.** Parse dates explicitly; watch strings-as-factors (R) and object dtype (pandas).  
+- **Ambiguous plots.** Always label axes, units, and filters; add a one-line caption.  
+- **Undocumented cleaning.** Keep a changelog cell: what changed, why, and when.
+
+## Quick practice
+
+1. Take a messy CSV (wide layout). **Pivot** to tidy long form, then summarise and plot a distribution.  
+2. Introduce a few NAs. Try **three** different missing-data strategies; compare the resulting mean/variance.  
+3. Flag outliers with the **IQR rule**. Re‑plot with and without outliers; discuss how conclusions change.  
+4. Join two small tables on a key. Validate the row count and check for unexpected many‑to‑many joins.

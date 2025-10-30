@@ -1,447 +1,280 @@
-# Lecture 6 Joining Data, SQL and Introduction to RegEx
+# Joining Data, SQL, and an Introduction to RegEx
 
 ### Resources
 
 #### Joining Data
-
-- [P4DA](https://wesmckinney.com/book/): 8.2-8.3
-- [R4DS](https://r4ds.hadley.nz/): 19.1-19.4
+- [P4DA](https://wesmckinney.com/book/): 8.2–8.3
+- [R4DS](https://r4ds.hadley.nz/): 19.1–19.4
 
 #### SQL
-
 - [W3, SQL Basics](https://www.w3schools.com/sql/sql_syntax.asp)
-- [R4DS](https://r4ds.hadley.nz/) chapter 19
-- SQLite [Python](https://docs.python.org/3/library/sqlite3.html#tutorial), [R](https://solutions.posit.co/connections/db/getting-started/database-queries/)
+- [R4DS](https://r4ds.hadley.nz/) Chapter 19
+- SQLite: [Python sqlite3](https://docs.python.org/3/library/sqlite3.html#tutorial), [R dbplyr](https://solutions.posit.co/connections/db/getting-started/database-queries/)
 
 #### RegEx
-
-- [R4DS](https://r4ds.hadley.nz/strings) chapter 14
-- [P4DA](https://wesmckinney.com/book/data-cleaning.html#text_string_manip) chapter 7.4
+- [R4DS](https://r4ds.hadley.nz/strings) Chapter 14
+- [P4DA](https://wesmckinney.com/book/data-cleaning.html#text_string_manip) §7.4
 - [RegEx Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 
-*You can find examples and motivation in the resources.*
+> Use the readings for depth; this page is a hands-on guide to what we’ll use and why.
 
-## Summary
 
-In this lecture, we explore key topics in data manipulation and querying.
-First, we discuss the concept of joins, which allow us to combine different
-sources of data into a single dataframe. This is a crucial skill for data
-scientists, as data is often scattered across multiple sources such as
-databases, the internet, and experimental datasets. Joining enables us to
-consolidate these scattered datasets into one.
+## Overview
 
-Next, we cover the basics of SQL, focusing on the fundamental syntax for making
-queries. This includes both retrieving and storing data in a database, laying
-the foundation for effective database management.
+This week we focus on three practical skills:
 
-Finally, we delve into the use of RegEx for pattern matching in strings. RegEx
-is a powerful tool for bulk searching patterns and is an industry standard. It
-can be applied across various tools we frequently use, such as Git, Python/R,
-and SQL, making it an essential skill for efficient data processing.
+1) **Joining data:** combine related tables into one analysis-ready data frame.  
+2) **SQL basics:** query and store data in relational databases.  
+3) **Regular expressions (RegEx):** find and manipulate text via patterns.
 
-## Joins
+Each builds directly on Weeks 1–3 (data frames, plotting, EDA, cleaning).
 
-Joining tables is the process of combining data from multiple tables into a
-single table. This operation is fundamental in data analysis and database
-management, as it allows us to consolidate scattered datasets. There are several
-types of joins, each with unique implications for the structure and size of the
-resulting table. The four most common types are `left join`, `right join`, `inner
-join`, and `outer join`. Each serves a specific purpose, depending on how we want
-to merge the tables.
 
-The following image visually illustrates these operations:
+## Joining Data
 
-![join-venn](https://www.alphacodingskills.com/sql/img/sql-join.PNG)
+A **join** merges two tables by matching key columns. The result depends on the join type:
 
-*Image from: https://www.alphacodingskills.com/sql/img/sql-join.PNG*
+- **Inner join**: only matches present in both tables.  
+- **Left join**: keep all rows from left; attach matches from right.  
+- **Right join**: mirror of left join.  
+- **Full/outer join**: keep all rows from both; unmatched become missing.
 
-In this context, we are always referring to combining two tables at a time. When
-working with more than two tables, we can achieve the desired result by
-combining them iteratively, two tables at a time.
+![join-venn](https://www.alphacodingskills.com/sql/img/sql-join.PNG)  
+*Image credit: alphacodingskills.com*
 
-A common approach is to iteratively expand a dataset by incorporating additional
-datasets through left join, which is widely used due to its practicality.
-However, the other types of joins— `right join`, `inner join`, and `outer join`—are
-equally important for creating more intricate and specific dataset combinations.
+> Join two tables at a time. For more tables, join iteratively in a clear order.
 
-Mastering the art of joining tables is essential for working effectively with
-SQL-based databases. Joins play a critical role in SQL, as efficient data
-storage typically involves splitting data into multiple related tables.
-Understanding how to reassemble this data through joins is a key skill, which we
-will explore further in the upcoming lecture.
+### Minimal patterns (Python & R)
 
-## SQL 
+:::code-group
+```Python
+import pandas as pd
 
-What is SQL? Structured Query Language (SQL) is a computer language that enables
-us to communicate and manipulate SQL databases(db) and it is one of the most widely used
-languages for db management. 
+# Example keys must be clean and unique (or you’ll multiply rows)
+left  = pd.DataFrame({"id":[1,2,3], "x":[10,20,30]})
+right = pd.DataFrame({"id":[2,3,4], "y":[200,300,400]})
 
-There are many flavours (versions) of SQL. However, they all
-share the basic syntax as below and often only differ in the way the basic
-syntax is extended.
+inner = left.merge(right, on="id", how="inner")
+leftj = left.merge(right, on="id", how="left")
+rightj = left.merge(right, on="id", how="right")
+outer = left.merge(right, on="id", how="outer")
+```
 
-SQL is a Relational Database Management System (RDBMS), meaning that the data is
-stored in tables that are seperated based on the scope of the database. A nice
-illustration of how data is stored can be seen in the figure below.
+```R
+library(dplyr)
 
-<img src="https://r4ds.hadley.nz/diagrams/relational.png" alt="drawing" width="500" style="margin-left:auto;margin-right:auto;"/>
+left  <- tibble::tibble(id = c(1,2,3), x = c(10,20,30))
+right <- tibble::tibble(id = c(2,3,4), y = c(200,300,400))
 
-*Image borrowed from:https://r4ds.hadley.nz/*
+inner  <- left %>% inner_join(right, by = "id")
+leftj  <- left %>% left_join(right,  by = "id")
+rightj <- left %>% right_join(right, by = "id")
+outer  <- left %>% full_join(right,  by = "id")
+```
+:::
 
-Here, the tables are seperated to reflect differring objects. We also see that
-the tables are linked or *related* to each other through specific variables (*keys*). This
-is where the name relational database comes from.
+> Sanity checks: compare row counts before/after; check for duplicated keys; inspect a few rows of the join result.
 
-### Basic Syntax
 
-Writing an SQL *query*(a question or a requests) is analagous to speaking to
-the database. Once we get a grasp of the basic syntax we will be able to query
-the database and retrieve data.
+## SQL (Structured Query Language)
 
-The syntax will be familiar from the tools we have already learnt.
+SQL is how we **query** and **manage** relational databases. Data lives in tables related by keys; you **select** columns, **filter** rows, and **join** tables by keys.
 
-We use `SELECT` to determine the variables we want and `FROM` to specify the
-table we want it from. Following the image above, we can make the following query.
+### Relational layout
+
+<img src="https://r4ds.hadley.nz/diagrams/relational.png" alt="relational" width="500" style="margin-left:auto;margin-right:auto;"/>
+
+*Image borrowed from r4ds.hadley.nz*
+
+### Basic querying
+
+Select columns and rows from a table:
 
 ```SQL
 SELECT carrier, dest, tailnum
 FROM flights;
 ```
-**Make sure to end the query with `;`** 
 
-We can use `SELELCT *` to get *all* variables in the table. The query above is
-the simplest query one can make in SQL.
+Get all columns with `*`:
 
-We can add a layer of complexity by filtering the table. We can do this by
-using the `WHERE` command. Continuing the example, we can make the following query.
+```SQL
+SELECT *
+FROM flights;
+```
 
-```SQL 
+Filter rows with `WHERE` and logical operators:
+
+```SQL
 SELECT carrier, dest, tailnum
 FROM flights
-WHERE dest='sweden';
-```
-Furthermore, we can use the logical operators `AND`, `OR`, `NOT` to perform logical chaining of conditions. The basic syntax is the following.
-
-```SQL 
-SELECT variable1, variable2, ... -- * if you want all variables
-FROM table
-WHERE condition1 AND/OR/NOT condition2 AND/OR/NOT condition3 ...;
+WHERE dest = 'Sweden' AND carrier <> 'XX';
 ```
 
-To aggregate multiple tables into a single table we can use `... JOIN`. The
-syntax is similar to the previous lecture. `ON` specifies the key(s) to
-join on. Continuing the example above the syntax is the following.
-
-```SQL 
-SELECT carrier, dest, tailnum, airlines.names
-FROM flights
-LEFT JOIN airlines ON flights.carrier = airlines.carrier;
-```
-
-Using the syntax described above, we can chain multiple operations to generate
-the desired table. You can see more operations on [W3](https://www.w3schools.com/sql/default.asp).
-
-Since the SQL syntax has been adopted by both `pandas` and `tidyverse`, the
-content above will not be completely new to learn. 
-
-### Storing Data
-
-To start storing data, we need to create a table to store it in. We can do this
-using the `CREATE` command. The query is as follows. 
+Join tables with matching keys:
 
 ```SQL
-CREATE TABLE table_name (
-  ...
-);
+SELECT f.carrier, f.dest, f.tailnum, a.name
+FROM flights AS f
+LEFT JOIN airlines AS a
+  ON f.carrier = a.carrier;
 ```
 
-To our table, we need to add columns (variable), we can do this by specifying
-the name of the column and datatype. We can also specify constraints on the
-variable. The query is as follows.  
+### Creating and storing data
 
-```SQL
-CREATE TABLE table_name (
-  Variable1 datatype constraint,
-  Variable2 datatype constraint,
-  ...
-);
-```
-
-Common constraints are `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`. There
-are more constraints that can be added. They can be found on W3. 
-
-The *unique* identifier (id) of a row should be constrained with `UNIQUE` and it
-must also be filled (`NOT NULL`). The `PRIMARY KEY` incorporates both constraints.
-Therefore, it is good practice to specify the row id using the `PRIMARY KEY`
-constraint. 
-
-An example of creating a table can look something like the following 
-query.
+Define tables and constraints to keep data clean:
 
 ```SQL
 CREATE TABLE Persons (
-  name VARCHAR(255) NOT NULL,
-  age INT,  -- It does not need to be specified
-  id_number VARCHAR PRIMARY KEY
-);
-```
-
-Specific datatypes can be looked up on [W3](https://www.w3schools.com/sql/default.asp).
-
-To change a table that already exists we can use the `ALTER` command. Specific
-ways to alter tables can be found on [W3](https://www.w3schools.com/sql/sql_alter.asp).
-
-Putting it all together, the SQL query looks as follows. 
-
-```SQL
-CREATE TABLE Persons (
-  Name VARCHAR(255) NOT NULL,
-  Age INT,  -- It does not need to be specified
-  ID_number VARCHAR(255) PRIMARY KEY
+  Name       VARCHAR(255) NOT NULL,
+  Age        INT,
+  ID_number  VARCHAR(255) PRIMARY KEY
 );
 
 CREATE TABLE Computers (
   Computer_id INT PRIMARY KEY,
-  Model VARCHAR(255),
-  Brand VARCHAR(255),
-  Owner VARCHAR(255) FOREIGN KEY REFERENCES Persons(ID_number) 
-)
+  Model       VARCHAR(255),
+  Brand       VARCHAR(255),
+  Owner       VARCHAR(255),
+  FOREIGN KEY (Owner) REFERENCES Persons(ID_number)
+);
 ```
-Here, we create two tables and use `FOREIGN KEY` to link the owner of the
-computer to a specific person using the id-number. If we later realise that we
-want a person to have a variable specifying occupation, we can use the following
-command. 
+
+Alter an existing table:
 
 ```SQL
 ALTER TABLE Persons
 ADD Occupation VARCHAR(255);
 ```
 
-With a table created, we can add entries to the table. This can be done using
-the `INSERT` command. The full syntax looks as follows.
-
-```SQL
-INSERT INTO table_name (variable1, variable2, ...)
-VALUES (value1, value2, ...)
-```
-
-Note that the order of the values should follow the order of the variables.
-Furthermore, if the constraints are violated we will get an error. 
-
-In the example above the query may look like
+Insert rows:
 
 ```SQL
 INSERT INTO Persons (Name, ID_number)
-VALUES ('Taariq', '19000101-xxxx');
+VALUES ('Taariq', '19000101-XXXX');
 ```
-Since, the Age variable does not need to be filled in, the query will populate
-the `Persons` table and have an empty cell for the Age column.
 
-We are only scratching the surface of SQL, there is a lot more to learn.
-However, with this basic knowledge we will be able to interact with databases. 
-You can find more information in the listed resources (W3). 
+> Constraints like `PRIMARY KEY`, `NOT NULL`, `UNIQUE`, `FOREIGN KEY` prevent bad data at the source.
 
-**There are various libraries in Python and R to interact with SQL databases. We
-will primarily be working with SQLite databases since they are more accessible.
-Popular libraries are [sqlite3](https://docs.python.org/3/library/sqlite3.html#tutorial)
-for Python and [dbplyr](https://dbplyr.tidyverse.org/articles/dbplyr.html) for
-R.** 
+### Using SQLite from Python/R
 
-## RegEx
+:::code-group
+```Python
+import sqlite3
+import pandas as pd
 
-Regular Expressions (RegEx) is a powerful tool used in computer science and
-programming for pattern matching within strings. It provides a concise and
-flexible means of searching, matching, and manipulating text based on patterns.
+con = sqlite3.connect("example.db")
+cur = con.cursor()
 
-A regular expression is a sequence of characters (a type of query) that defines
-a search pattern. These patterns can include a variety of elements such as
-literal characters, metacharacters (special characters with specific meanings), and
-quantifiers (to specify the number of occurrences). Regex is commonly used in
-tasks like text searching, validation, and text manipulation.
+cur.execute(\"\"\"
+CREATE TABLE IF NOT EXISTS persons (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  age INTEGER
+);
+\"\"\")
 
-Before diving in to the syntax of RegEx, let's look at a simple example. 
+cur.execute("INSERT INTO persons (name, age) VALUES (?, ?)", ("Ada", 36))
+con.commit()
 
-Consider a scenario where you want to extract email addresses from a text, for
-instance the following text. 
+df = pd.read_sql_query("SELECT * FROM persons", con)
+con.close()
+```
 
-> Please contact support@example.com for assistance. For general inquiries, you can email info@company.com.
+```R
+library(DBI)
+library(RSQLite)
+library(dplyr)
 
-We can use the following RegEx to extract the emails in this text by matching
-them to a specific format.
+con <- dbConnect(RSQLite::SQLite(), "example.db")
+dbExecute(con, "
+CREATE TABLE IF NOT EXISTS persons (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  age INTEGER
+);
+")
+dbExecute(con, "INSERT INTO persons (name, age) VALUES ('Ada', 36)")
+
+df <- dbGetQuery(con, "SELECT * FROM persons")
+dbDisconnect(con)
+```
+:::
+
+
+## RegEx (Regular Expressions)
+
+RegEx matches **text patterns**. It’s ideal for validation (emails, phone numbers), extraction (IDs, tags), and cleaning (whitespace, formatting).
+
+### Quick tour of building blocks
+
+- **Literals**: exact characters (e.g., `abc`).  
+- **Metacharacters**: `.` any char; `^` start; `$` end; `|` OR; `()` groups.  
+- **Character classes**: `[aeiou]`, `[^0-9]`.  
+- **Quantifiers**: `*` 0+, `+` 1+, `?` 0/1, `{n}`, `{n,}`, `{n,m}`.  
+- **Predefined classes**: `\d` digit, `\w` word, `\s` whitespace (capitals negate).  
+- **Anchors**: `\b` word boundary, `\B` non-boundary.  
+- **Escapes**: `\.` for a literal dot.
+
+### Example: extract emails from text
 
 ```regex
 \b[\w._%+-]+@[\w.-]+\.[A-Za-z]{2,4}\b
 ```
 
-The expression above might look daunting but it will make sense when you get
-thet gist of RegEx. Lets break down this expression. 
+Breakdown: `\b` word boundary; username class `[...] +`; `@`; domain class; literal dot `\.`; TLD `{2,4}`; boundary.
 
-- `\b`: Word boundary to ensure that the match is a whole word and not part of a
-  larger sequence. For instance, `\bcat\b` will match the word *cat* but not
-  *scattered*. 
-- `[\w._%+-]+`: Matches the username part of the email address, allowing
-  alphanumeric characters, dots, underscores, percent signs, plus signs, and
-  hyphens. Here `\w` is a **metacharacter** which is short for `A-Za-z0-9`. `+`
-  **outside** of the brackets matches 1 or more of the proceeding character.
-- `@`: Matches the **@** symbol.
-- `[\w.-]+`: Matches the domain name, allowing alphanumeric characters, dots, and
-  hyphens.
-- `\.`: Matches the dot before the top-level domain.
-- `[A-Z|a-z]{2,4}`: Matches the top-level domain (eg. .com) with at least two and
-  at most 4 characters .
-- `\b`: Word boundary to complete the match.
+### Example: match only example.com emails
 
-To summarise The following image illustrates what we have done.
-
-![regex-email](https://kottke.org/plus/misc/images/regex-example.png)
-
-*Image from: https://kottke.org/21/07/a-history-of-regular-expressions-and-artificial-intelligence*
-
-Even if it does not make sense yet that is fine. You will get the hang of it
-when you start using it. 
-
-### Basic Syntax
-
-Some important definitions in regex are the following.
-
-#### Literals
-Characters in a regex pattern that match themselves. For example, the regex `abc` will match the string "abc" in the input.
-
-#### Metacharacters
-Special characters with a specific meaning in regex. Some common metacharacters include:
-   - `.` (dot): Matches any single character except a newline.
-   - `^`: Anchors the regex at the start of the string.
-   - `$`: Anchors the regex at the end of the string.
-   - `*`: Matches 0 or more occurrences of the preceding character or group.
-   - `+`: Matches 1 or more occurrences of the preceding character or group.
-   - `?`: Matches 0 or 1 occurrence of the preceding character or group.
-   - `|`: Acts like a logical OR, allowing alternatives. For example, `a|b` matches either "a" or "b".
-   - `()`: Groups characters together. For example, `(abc)+` matches one or more occurrences of "abc".
-
-#### Character Classes
-   - `[ ]`: Defines a character class. For example, `[aeiou]` matches any vowel.
-   - `[^ ]`: Negates a character class. For example, `[^0-9]` matches any non-digit character.
-
-#### Quantifiers
-Control the number of occurrences of a character or group.
-   - `{n}`: Matches exactly n occurrences.
-   - `{n,}`: Matches n or more occurrences.
-   - `{n,m}`: Matches between n and m occurrences.
-
-#### Escape sequences
-Use a backslash `\` to escape a metacharacter, allowing it to be treated as a literal character. For example, `\.` matches a literal period.
-
-#### Predefined character classes
-   - `\d`: Matches any digit (equivalent to `[0-9]`).
-   - `\D`: Matches any non-digit.
-   - `\w`: Matches any word character (alphanumeric + underscore).
-   - `\W`: Matches any non-word character.
-   - `\s`: Matches any whitespace character.
-   - `\S`: Matches any non-whitespace character.
-
-#### Anchors
-Specify the position in the string where a match must occur.
-   - `\b`: Word boundary.
-   - `\B`: Non-word boundary.
-   - `^`: Start of a line.
-   - `$`: End of a line.
-
-#### Modifiers
-   - `i`: Case-insensitive matching.
-   - `g`: Global matching (find all matches, not just the first).
-
-#### Wildcard
-`.*` is a common pattern to match any character (except newline) zero or more times.
-
-I strongly believe that you learn regex by examples. So let's look a typical
-example of regex.
-
-### Example: Extracting Email Addresses from a List
-
-Suppose you have a list of email addresses:
-
-```txt 
-john.doe@example.com
-jane.smith@gmail.com 
-alice.jones@example.com
-bob.miller@yahoo.com
-```
-
-Now, let's say you want to extract all the email addresses from the domain
-example.com. You can use the following regex:
-
-
-```regex 
+```regex
 \b[A-Za-z0-9._%+-]+@example\.com\b
 ```
 
-Explanation:
+### Running RegEx in Python/R
 
-\b: Word boundary to ensure that we match the entire domain, not just a part of
-it. [A-Za-z0-9._%+-]+: Matches the username part of the email address, allowing
-letters, numbers, dots, underscores, percent signs, plus signs, and hyphens.
-@example\.com: Matches the domain part, specifically example.com.
+:::code-group
+```Python
+import re
 
-This pattern will match the following strings.
+text = "Contact support@example.com or info@company.com."
+pattern = r"\b[\w._%+-]+@[\w.-]+\.[A-Za-z]{2,4}\b"
+emails = re.findall(pattern, text)
+# ['support@example.com', 'info@company.com']
 ```
-['john.doe@example.com', 'alice.jones@example.com']
+
+```R
+library(stringr)
+
+text <- "Contact support@example.com or info@company.com."
+pattern <- "\\b[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,4}\\b"
+emails <- str_extract_all(text, pattern)[[1]]
+# c("support@example.com", "info@company.com")
 ```
+:::
 
-This is a simple example of regex that is meant to illustrate the
-power of it.
+## Exercises
 
-### Exercises
+Try these in a notebook; keep your reasoning next to the code.
 
-Here are some excersises, try them out on your own!
-
-#### Simple Email Validation 
-````txt
+### 1) Email validation
+```
 john.doe@example.com
 jane.smith@gmail.com
 alice.jones123@yahoo.com
 invalid.email@domain
-````
-
-Output should be:
-```txt
-Valid Email Addresses:
-- john.doe@example.com
-- jane.smith@gmail.com
-- alice.jones123@yahoo.com
-
-Invalid Email Addresses:
-- invalid.email@domain
 ```
+- Extract **valid** emails (must contain `@` and a TLD like `.com`, `.org`, …).  
+- Report invalids separately.
 
-### Extracting Phone Numbers
-
-````txt 
+### 2) Phone numbers
+```
 Phone numbers: 
-123-456-7890,
-(555) 987-6543, 
-9876543210, 555-1234
-Invalid: 
-12-345-6789, 
-555-98765, 
-abcdefgh
-````
-
-Ouput should be:
-```txt
-Valid Phone Numbers:
-- 123-456-7890
-- (555) 987-6543
-- 9876543210
-- 555-1234
-
-Invalid Phone Numbers:
-- 12-345-6789
-- 555-98765
-- abcdefgh
+123-456-7890, (555) 987-6543, 9876543210, 555-1234
+Invalid: 12-345-6789, 555-98765, abcdefgh
 ```
-### Extracting HTML Tags and Attributes
+- Extract US-like formats above as valid; flag the rest as invalid.
 
-```txt
+### 3) HTML tags and attributes
+```
 <p class="intro">This is a <strong>sample</strong> paragraph.</p>
 <p>No class here.</p>
 <div id="container" class="main">
@@ -449,17 +282,7 @@ Invalid Phone Numbers:
   <p>Content</p>
 </div>
 ```
-Output should be: 
-```txt
-HTML Tags and Attributes:
-- <p class="intro">
-- <strong>
+- Extract start tags (`<p ...>`, `<strong>`, `<div ...>`).  
+- For `<div>`, also extract `id="..."` and `class="..."` attribute pairs.
 
-Attributes in <div>:
-- id="container"
-- class="main"
-```
-
-You can execute RegEx using Python or R. Look at the resources for how to do
-this! 
-
+> You can run RegEx from Python (`re`) or R (`stringr`). The cheat sheet above is handy while you practice.

@@ -1,7 +1,7 @@
 # Project
 
 - **Deadline:** **9 January 2026, 23:59 (Europe/Stockholm)**
-- **Presentations:** **16 January 2025, TBA**
+- **Presentations:** **16 January 2026, 12.00-17.00**
 
 ## Overview
 
