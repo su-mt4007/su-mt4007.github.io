@@ -60,11 +60,11 @@ All times are **Europe/Stockholm**. Assignments are due **Tuesdays 23:59**; peer
 
 | Homework                                         | Assignment deadline       | Peer-review deadline      |
 | :----------------------------------------------- | :------------------------ | :------------------------ |
-| [HW1: GitHub Test-Run](/homework/1)              | **Tue, 2026-11-10 23:59** | **Thu, 2026-11-12 23:59** |
-| [HW2: Tables & Plots — Basic](/homework/2)       | **Tue, 2026-11-17 23:59** | **Thu, 2026-11-19 23:59** |
-| [HW3: Exploring & Visualising Data](/homework/3) | **Tue, 2026-11-24 23:59** | **Thu, 2026-11-26 23:59** |
-| [HW4: SQL & Regex](/homework/4)                  | **Tue, 2026-12-01 23:59** | **Thu, 2026-12-03 23:59** |
-| [HW5: Data from the Web](/homework/5)            | **Thu, 2026-12-11 23:59** | **Thu, 2026-12-10 23:59** |
+| [HW1: GitHub Test-Run](/homework/1)              | **Mon, 2025-11-10 23:59** | **Thu, 2025-11-12 23:59** |
+| [HW2: Tables & Plots — Basic](/homework/2)       | **Mon, 2025-11-17 23:59** | **Thu, 2025-11-19 23:59** |
+| [HW3: Exploring & Visualising Data](/homework/3) | **Mon, 2025-11-24 23:59** | **Thu, 2025-11-26 23:59** |
+| [HW4: SQL & Regex](/homework/4)                  | **Mon, 2025-12-01 23:59** | **Thu, 2025-12-03 23:59** |
+| [HW5: Data from the Web](/homework/5)            | **Mon, 2025-12-11 23:59** | **Thu, 2025-12-10 23:59** |
 
 ---
 
