@@ -4,7 +4,7 @@ There are no formal lectures; the material is designed for self-study. However, 
 
 * **Mondays, 13:00–16:00 (on campus):** Live demo of the previous week’s material, followed by time for questions and homework help. In past iterations of the course, these sessions have been very appreciated.
 * **Thursdays, 13:00–16:00 (on Zoom):** Open Q&A.
-  [Zoom link for Q&A]()
+  [Zoom link for Q&A](https://stockholmuniversity.zoom.us/j/6254185246)
 
 **Bring your laptop.** Parts of the sessions will be interactive, and following along will make the homework easier.
 
