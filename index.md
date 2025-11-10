@@ -12,6 +12,6 @@ hero:
       link: /about
     - theme: alt
       text: Moodle Page
-      link: https://kurser.math.su.se/course/view.php?id=1446
+      link: https://kurser.math.su.se/course/view.php?id=1631
 ---
 
