@@ -12,7 +12,7 @@ Each homework aligns with the weekly material (e.g., **HW1 ↔ Week 1**, **HW2 �
 ## At a Glance
 
 * **Workload:** 6 assignments + 6 peer reviews
-* **Deadlines per homework:** Assignment **Tue 23:59**, Peer Review **Thu 23:59** (Europe/Stockholm)
+* **Deadlines per homework:** Assignment **Monday 23:59**, Peer Review **Thursday 23:59** (Europe/Stockholm)
 * **Pass rule (per homework):** Submit **both** the assignment and its peer review by the deadlines.
 
   * If you miss a deadline, you must complete an **extra task** (assigned at the end of the course).
@@ -56,15 +56,15 @@ Address at least:
 
 ## Schedule (2026)
 
-All times are **Europe/Stockholm**. Assignments are due **Tuesdays 23:59**; peer reviews are due **Thursdays 23:59**.
+All times are **Europe/Stockholm**. Assignments are due **Monday 23:59**; peer reviews are due **Thursdays 23:59**.
 
 | Homework                                         | Assignment deadline       | Peer-review deadline      |
 | :----------------------------------------------- | :------------------------ | :------------------------ |
-| [HW1: GitHub Test-Run](/homework/1)              | **Mon, 2025-11-10 23:59** | **Thu, 2025-11-12 23:59** |
-| [HW2: Tables & Plots — Basic](/homework/2)       | **Mon, 2025-11-17 23:59** | **Thu, 2025-11-19 23:59** |
-| [HW3: Exploring & Visualising Data](/homework/3) | **Mon, 2025-11-24 23:59** | **Thu, 2025-11-26 23:59** |
-| [HW4: SQL & Regex](/homework/4)                  | **Mon, 2025-12-01 23:59** | **Thu, 2025-12-03 23:59** |
-| [HW5: Data from the Web](/homework/5)            | **Mon, 2025-12-11 23:59** | **Thu, 2025-12-10 23:59** |
+| [HW1: GitHub Test-Run](/homework/1)              | **Mon, 2025-11-10 23:59** | **Thu, 2025-11-13 23:59** |
+| [HW2: Tables & Plots — Basic](/homework/2)       | **Mon, 2025-11-17 23:59** | **Thu, 2025-11-20 23:59** |
+| [HW3: Exploring & Visualising Data](/homework/3) | **Mon, 2025-11-24 23:59** | **Thu, 2025-11-27 23:59** |
+| [HW4: SQL & Regex](/homework/4)                  | **Mon, 2025-12-01 23:59** | **Thu, 2025-12-04 23:59** |
+| [HW5: Data from the Web](/homework/5)            | **Mon, 2025-12-08 23:59** | **Thu, 2025-12-11 23:59** |
 
 ---
 
