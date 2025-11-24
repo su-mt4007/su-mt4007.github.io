@@ -1,6 +1,6 @@
 # Homework
 
-The homework component has **6 assignments**, each paired with a **peer review** of a classmate’s work.
+The homework component has **5 assignments**, each paired with a **peer review** of a classmate’s work.
 To **pass**, you must submit **every assignment** and complete **its peer review** by the stated deadlines.
 
 **Deadlines are strict.** Missing either the assignment or the peer-review
