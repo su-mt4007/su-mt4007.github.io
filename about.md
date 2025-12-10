@@ -40,7 +40,7 @@ You’ll practice every week, do an **individual project**, and finish with an *
 
 Passing rules, exact deadlines, late/resubmission policies, and feedback timelines live on the relevant pages (and are listed on the relevant pages and on **Moodle**).
 
-The final course grade combines all three components. See **[Final Grade Explanation](/final-grade/)** for details.
+The final course grade combines all three components. See **[Final Grade Explanation](/final-grade)** for details.
 
 ## Getting help
 
