@@ -148,18 +148,19 @@ the calculated final grade.
 
 
 ## Explanation of the grading rule
-### Grade scales:
+
+### Grade scales
 
 * Project and Exam use: F, E, D, C, B, A which contribute to the score below with numeric values  
   E = 1, D = 2, C = 3, B = 4, A = 5.
 * Homework uses: U, G, VG which contribute to the score below with numeric values  
   U = 0, G = 3, VG = 5.
 
-### Immediate fail rule:
+### Immediate fail rule
 
 * If any component is a failing grade (Homework = U, Project = F, or Exam = F), the overall course grade is automatically F.
 
-### Weighted average (for non-failing combinations):
+### Weighted average (for non-failing combinations)
 
 The overall score is computed as a weighted average of the three components according to the number of credits each module has:
 * Homework weight: 3 ECTS  
@@ -171,7 +172,7 @@ $$
 \text{Score} = \frac{3G_{\text{HW}} + 3G_{\text{Proj}} + 1.5G_{\text{Exam}}}{7.5}.
 $$
 
-### Converting the numeric score to final grade:
+### Converting the numeric score to final grade
 
 * A: score ≥ 4.5  
 * B: 3.5 ≤ score < 4.5  
