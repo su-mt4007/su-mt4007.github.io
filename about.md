@@ -34,11 +34,13 @@ By the end, you will be able to:
 
 You’ll practice every week, do an **individual project**, and finish with an **exam**.
 
-* **Home assignments:** weekly, **Pass/Fail**. Focus on the data‑analysis pipeline: load → transform → explore → visualize → report. Expect roughly **half‑time study** each week. Details: **[Homework](/homework/)**.
-* **Project:** **70%** of the final grade (A–F). Pick a public/open dataset and tell a clear, reproducible data story. Details, milestones, and rubric: **[Project](/project)**.
-* **Exam:** **30%** of the final grade (A–F). You’ll apply course methods to a given problem. Format and scheduling: **[Exam](/exam/)**.
+* **Home assignments:** Weekly. Focus on the data‑analysis pipeline: load → transform → explore → visualize → report. Expect roughly **half‑time study** each week. Details: **[Homework](/homework/)**.
+* **Project:** Pick a public/open dataset and tell a clear, reproducible data story. Details, milestones, and rubric: **[Project](/project)**.
+* **Exam:**  You’ll apply course methods to a given problem. Format and scheduling: **[Exam](/exam/)**.
 
 Passing rules, exact deadlines, late/resubmission policies, and feedback timelines live on the relevant pages (and are listed on the relevant pages and on **Moodle**).
+
+The final course grade combines all three components. See **[Final Grade Explanation](/final-grade/)** for details.
 
 ## Getting help
 

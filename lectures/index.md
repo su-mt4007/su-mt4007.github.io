@@ -30,7 +30,7 @@ Attendance at the live demos is **not** mandatory, but highly recommended—you�
 |           | Thu, 2025-11-27,  13:00 - 16:00 | Zoom Q&A                                                            |
 |        5  | Mon, 2025-12-01,  13:00 - 16:00 | Guest Lecturer, Pär Villner from Annalect                           |
 |           | Thu, 2025-12-04,  13:00 - 16:00 | [Retrieving Data from the Web (REST APIs & Web Scraping)](/lectures/week-5)                    |
-|        6  | Mon, 2025-12-08,  13:00 - 16:00 | Extra Topic ([Extracting unstructured data with LLMs](/lectures/week-6)) if time permits |
+|        6  | Mon, 2025-12-08,  13:00 - 16:00 | On site Q&A |
 |           | Thu, 2025-12-11,  13:00 - 16:00 | Zoom Q&A                                                            |
-|        7  | Mon, 2025-12-15,  13:00 - 16:00 | Wrap up, Questions about Exam and Project & Session for supervision |
+|        7  | Mon, 2025-12-15,  13:00 - 16:00 | ZOOM Q&A |
 |           | Thu, 2025-12-17,  13:00 - 16:00 | Zoom Q&A                                                            |

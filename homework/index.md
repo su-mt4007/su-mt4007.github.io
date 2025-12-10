@@ -11,18 +11,18 @@ Each homework aligns with the weekly material (e.g., **HW1 ↔ Week 1**, **HW2 �
 
 ## At a Glance
 
-* **Workload:** 6 assignments + 6 peer reviews
+* **Workload:** 5 assignments + 5 peer reviews
 * **Deadlines per homework:** Assignment **Monday 23:59**, Peer Review **Thursday 23:59** (Europe/Stockholm)
 * **Pass rule (per homework):** Submit **both** the assignment and its peer review by the deadlines.
 
   * If you miss a deadline, you must complete an **extra task** (assigned at the end of the course).
   * **Late work cannot earn VG**; late items are graded **Pass/Fail** only.
 * **Grading scale (per homework):** **U (Fail) / G (Pass) / VG (Pass with Distinction)**, based on **completeness, clarity, correctness**.
-* **Final grade for HW module:** Determined by the six homework grades:
+* **Final grade for HW module:** Determined by the 5 homework grades:
 
-  * **VG (Pass with Distinction):** ≥ **4** assignments graded **VG** (the rest at least **G**)
-  * **G (Pass):** **All 6** assignments graded **G** or higher
-  * **U (Fail):** Fewer than **6** assignments graded **G**
+  * **VG (Pass with Distinction):** ≥ **3** assignments graded **VG** (the rest at least **G**)
+  * **G (Pass):** **All 5** assignments graded **G** or higher
+  * **U (Fail):** Fewer than **5** assignments graded **G**
 
 ## How Assignments Work
 
@@ -54,7 +54,7 @@ Address at least:
 
 **Peer-review deadline:** **Thursdays 23:59 (Europe/Stockholm)** for the corresponding homework.
 
-## Schedule (2026)
+## Schedule (2025)
 
 All times are **Europe/Stockholm**. Assignments are due **Monday 23:59**; peer reviews are due **Thursdays 23:59**.
 
