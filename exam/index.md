@@ -29,16 +29,15 @@ Details will be announced on **Moodle**. (Assume standard written-exam rules unl
 ## Grading & scale
 
 * **Total points:** 100
-* **Passing:** **E or better (≥ 50 points)**
+* **Passing:** **E or better (≥ 60 points)**
 * **Scale:**
 
-  * **A:** 90–100
-  * **B:** 80–89
-  * **C:** 70–79
-  * **D:** 60–69
-  * **E:** 50–59
-  * **F:** 0–49
-
+  * **A:** 90
+  * **B:** 82
+  * **C:** 76
+  * **D:** 68
+  * **E:** 60
+  
 Partial credit is awarded on short-essay questions for clear reasoning.
 
 ## Logistics
