@@ -32,10 +32,10 @@ Details will be announced on **Moodle**. (Assume standard written-exam rules unl
 * **Passing:** **E or better (≥ 60 points)**
 * **Scale:**
 
-  * **A:** 90
-  * **B:** 82
-  * **C:** 76
-  * **D:** 68
+  * **A:** 88
+  * **B:** 80
+  * **C:** 72
+  * **D:** 64
   * **E:** 60
   
 Partial credit is awarded on short-essay questions for clear reasoning.
